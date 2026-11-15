@@ -1,0 +1,47 @@
+[
+  {
+    "type": "preference",
+    "scope": "global",
+    "importance": 5,
+    "tags": ["style", "communication"],
+    "content": "User prefers concise explanations, small diffs, and direct answers."
+  },
+  {
+    "type": "convention",
+    "scope": "project",
+    "project": "agent-memory",
+    "importance": 5,
+    "tags": ["testing"],
+    "content": "Tests use node:test. Do not add Jest or another test runner."
+  },
+  {
+    "type": "decision",
+    "scope": "project",
+    "project": "agent-memory",
+    "importance": 4,
+    "tags": ["storage", "sqlite"],
+    "content": "Use Node's built-in node:sqlite module instead of a native SQLite addon, so install does not need a compiler."
+  },
+  {
+    "type": "decision",
+    "scope": "project",
+    "project": "agent-memory",
+    "importance": 3,
+    "tags": ["search", "embeddings"],
+    "content": "Default search is hybrid: SQLite FTS5 keywords plus a local hash embedding. HTTP embeddings are optional."
+  },
+  {
+    "type": "fact",
+    "scope": "global",
+    "importance": 3,
+    "tags": ["storage"],
+    "content": "Memories are stored in a local SQLite file. The default path is ~/.agent-memory/memory.db."
+  },
+  {
+    "type": "note",
+    "scope": "global",
+    "importance": 4,
+    "tags": ["safety"],
+    "content": "memory_clear only previews a delete until the caller sends the confirmation phrase it was given. Do not store secrets in memory."
+  }
+]
